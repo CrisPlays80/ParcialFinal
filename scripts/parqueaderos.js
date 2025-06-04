@@ -6,7 +6,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Definimos la URL de tu archivo DSL.json
-  const dslUrl = "./DSL.json"; // Asegurate que esta ruta sea correcta
+  const dslUrl = "../DSL.json"; // Asegurate que esta ruta sea correcta
 
   // Usamos fetch para cargar el archivo DSL de forma asincrona
   fetch(dslUrl)
