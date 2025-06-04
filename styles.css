@@ -1,0 +1,269 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Nueva fuente */
+  min-height: 100vh;
+  display: flex; /* Mantenemos flex para centrar contenido */
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  background-color: #f4f4f4; /* Puedes ajustar si prefieres un fondo más suave */
+}
+
+h1 {
+  color: #4a5568; /* Nuevo color de título */
+  margin-bottom: 25px; /* Espaciado del título */
+  font-size: 1.8em;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------------- */
+/* NUEVOS ESTILOS PARA EL CONTENEDOR PRINCIPAL DEL PARQUEADERO */
+/* Mapeo de .parking-layout a #parqueadero-mapa y sus propiedades visuales */
+#parqueadero-mapa {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px; /* Aumenta el padding interno */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(
+    10px
+  ); /* Efecto de desenfoque (si el fondo lo permite) */
+
+  /* Propiedades de Grid existentes, asegúrate que las áreas coincidan con tu HTML y DSL */
+  display: grid;
+  grid-template-areas:
+    "entradaIzquierdaSuperior tramoSuperiorIngreso entrada entrada"
+    "costadoIzquierdoBajoTecho centroEstablecimiento . costadoDerecho"
+    "parteFinalBajoTecho parteFinalBajoTecho . .";
+
+  gap: 8px; /* Espaciado entre secciones del grid */
+  width: 90%;
+  max-width: 1000px;
+  height: auto; /* Ajusta la altura automáticamente según el contenido */
+  min-height: 650px; /* Establece una altura mínima si necesitas un tamaño consistente */
+  border: none; /* Quitamos el borde anterior ya que la sombra y fondo lo reemplazan */
+}
+
+/* ------------------------------------------------------------------------- */
+/* ESTILOS PARA CADA SECCIÓN DE PARQUEO (.zona) */
+/* Mapeo de .parking-section a .zona */
+.zona {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* Espacio entre los parking-spot */
+  padding: 10px;
+  border-radius: 8px;
+  background: #f7fafc; /* Color de fondo por defecto para las secciones */
+  position: relative;
+  /* Eliminamos el border dashed anterior */
+  border: none; /* Reemplazado por los bordes específicos de cada sección */
+
+  /* Mantenemos la alineacion de contenido */
+  justify-content: center;
+  align-content: flex-start; /* Alinea los espacios al inicio verticalmente */
+
+  color: #555;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  overflow: auto; /* Permite scroll si hay muchos espacios */
+}
+
+#entradaIzquierdaSuperior {
+  grid-area: entradaIzquierdaSuperior;
+  border: 2px solid #fc8181;
+  background: #ebf8ff;
+}
+#tramoSuperiorIngreso {
+  grid-area: tramoSuperiorIngreso;
+  border: 2px solid #fc8181;
+  background: #ebf8ff;
+}
+#costadoIzquierdoBajoTecho {
+  grid-area: costadoIzquierdoBajoTecho;
+  border: 2px solid #fc8181;
+  background: #f0fff4;
+}
+#parteFinalBajoTecho {
+  grid-area: parteFinalBajoTecho;
+  background: #fffaf0;
+  border: 2px solid #fc8181;
+}
+#centroEstablecimiento {
+  grid-area: centroEstablecimiento;
+  background: #fff5f5;
+  border: 2px solid #fc8181;
+}
+#costadoDerecho {
+  grid-area: costadoDerecho;
+  background: #f7fafc;
+  border: 2px solid #fc8181;
+}
+#parteFinal {
+  grid-area: parteFinal;
+  background: #faf5ff;
+  border: 2px solid #fc8181;
+}
+#entrada {
+  grid-area: entrada;
+  background: #dc3545;
+  border: 2px solid #fc8181;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ESTILOS PARA LOS ESPACIOS INDIVIDUALES */
+/* Mapeo de .parking-spot a .espacio */
+.espacio {
+  width: 60px; /* Ancho del espacio */
+  height: 40px; /* Alto del espacio */
+  border: 2px solid #e2e8f0; /* Nuevo borde */
+  border-radius: 6px; /* Bordes redondeados */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Tamaño de fuente */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transicion mas suave */
+  background: white; /* Fondo blanco por defecto */
+  position: relative;
+
+  /* Quitado margin, ahora usa gap de parking-section */
+}
+
+/* ------------------------------------------------------------------------- */
+/* ESTADOS DE LOS ESPACIOS */
+.espacio.available {
+  /* Renombrado de .disponible a .available para coincidir */
+  background: #c6f6d5; /* Verde claro */
+  border-color: #48bb78;
+  color: #22543d;
+}
+
+.espacio.occupied {
+  /* Renombrado de .ocupado a .occupied para coincidir */
+  background: #feb2b2; /* Rojo claro */
+  border-color: #e53e3e;
+  color: #742a2a;
+}
+
+.espacio.selected {
+  /* Nuevo estado "selected" */
+  background: #bee3f8;
+  border-color: #3182ce;
+  color: #2a4365;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4);
+}
+
+.espacio:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------------------- */
+/* ICONOS ADICIONALES PARA ESPACIOS */
+.espacio.motorcycle-only::after {
+  content: "🏍️";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+}
+
+.espacio.under-roof::before {
+  content: "🏠";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  font-size: 12px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* LEYENDA */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  /* Nuevo nombre de clase */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend-color {
+  /* Nuevo nombre de clase */
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid; /* El borde ahora es parte del estilo del color */
+}
+
+/* ESTADOS DE LEYENDA (corresponden a los .espacio.status) */
+.legend-color.available {
+  background-color: #c6f6d5;
+  border-color: #48bb78;
+}
+
+.legend-color.occupied {
+  background-color: #feb2b2;
+  border-color: #e53e3e;
+}
+
+.legend-color.selected {
+  background-color: #bee3f8;
+  border-color: #3182ce;
+}
+
+.status-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  background: #f7fafc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.status-item {
+  text-align: center;
+}
+
+.status-number {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.status-label {
+  font-size: 12px;
+  color: #718096;
+}
+
+/* ------------------------------------------------------------------------- */
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .parking-grid {
+    /* Cambiado de .parking-grid a #parqueadero-mapa */
+    transform: scale(0.8);
+    /* Puedes ajustar el tamaño del grid para pantallas pequeñas */
+  }
+
+  .legend {
+    gap: 15px;
+  }
+
+  .status-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

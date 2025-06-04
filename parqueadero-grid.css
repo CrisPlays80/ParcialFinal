@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+#parqueadero-mapa {
+  display: grid;
+  /* La clave está en cómo defines las áreas y el tamaño de las celdas */
+  grid-template-areas:
+    "entradaIzquierdaSuperior tramoSuperiorIngreso entrada entrada"
+    "costadoIzquierdoBajoTecho centroEstablecimiento . costadoDerecho"
+    "parteFinalBajoTecho parteFinalBajoTecho . .";
+
+  /* Ajusta los anchos relativos de las columnas */
+  /* Los valores 'fr' son flexibles y se ajustan al espacio disponible */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columnas con anchos ajustados */
+
+  /* Ajusta las alturas relativas de las filas */
+  grid-template-rows: 1fr 2fr 1fr; /* 3 filas con alturas ajustadas */
+
+  gap: 15px; /* Aumenta el gap para mayor separación visual entre zonas */
+  width: 90%;
+  max-width: 1000px; /* Un poco mas ancho para el nuevo layout */
+  height: 650px; /* Un poco mas alto */
+  border: 3px solid #666;
+  background-color: #e0e0e0;
+  padding: 20px; /* Aumenta el padding para que el mapa no se pegue a los bordes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Asignación de áreas de grid a cada zona */
+/* ¡IMPORTANTE! Asegurate que los IDs aqui sean los mismos que en tu HTML */
+#costadoDerecho {
+  grid-area: costadoDerecho;
+}
+#costadoIzquierdoBajoTecho {
+  grid-area: costadoIzquierdoBajoTecho;
+}
+#parteFinalBajoTecho {
+  grid-area: parteFinalBajoTecho;
+}
+#centroEstablecimiento {
+  grid-area: centroEstablecimiento;
+}
+#tramoSuperiorIngreso {
+  grid-area: tramoSuperiorIngreso;
+}
+#entradaIzquierdaSuperior {
+  grid-area: entradaIzquierdaSuperior;
+}
+#entrada {
+  grid-area: entrada;
+  background-color: #dc3545;
+}
+
+.zona {
+  border: 1px dashed #999;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los espacios horizontalmente */
+  align-content: flex-start; /* Alinea los espacios al inicio verticalmente */
+  padding: 10px; /* Aumenta el padding interno de la zona */
+  box-sizing: border-box;
+  color: #555;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  overflow: auto; /* Permite scroll si hay muchos espacios */
+  position: relative; /* Necesario para posicionar el titulo de la zona */
+}
+
+.zona-titulo {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  color: #333;
+  z-index: 1; /* Asegura que este por encima de los espacios */
+}
+
+/* Estilos para los espacios individuales */
+.espacio {
+  width: 40px;
+  height: 60px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  margin: 5px; /* Aumenta el margen entre los espacios */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  font-weight: normal;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Estados de los espacios */
+.espacio.disponible {
+  background-color: #d4edda;
+  border-color: #28a745;
+}
+
+.espacio.ocupado {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+}
+
+.espacio.reservado {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+.espacio:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Leyenda */
+#leyenda {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.estado {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}

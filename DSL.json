@@ -1,0 +1,140 @@
+{
+  "configuracionSistema": {
+    "capacidadParqueo": 40,
+    "maximoVehiculosPorUsuario": 3,
+    "empleados": 6,
+    "diasOperacion": [
+      "Lunes",
+      "Martes",
+      "Miercoles",
+      "Jueves",
+      "Viernes",
+      "Domingo",
+      "Festivo"
+    ],
+    "metodosPago": ["Efectivo", "Digital"],
+    "porcentajeMultaCancelacion": 20,
+    "zonasParqueo": {
+      "costadoDerecho": { "capacidad": 12, "descripcion": "Costado derecho" },
+      "costadoIzquierdoBajoTecho": {
+        "capacidad": 9,
+        "descripcion": "Costado izquierdo bajo techo"
+      },
+      "centroEstablecimiento": {
+        "capacidad": 4,
+        "descripcion": "Centro del establecimiento"
+      },
+      "tramoSuperiorIngreso": {
+        "capacidad": 5,
+        "descripcion": "Tramo superior de ingreso"
+      },
+      "entradaIzquierdaSuperior": {
+        "capacidad": 6,
+        "descripcion": "Lado izquierdo superior de ingreso"
+      },
+      "parteFinalBajoTecho": {
+        "capacidad": 4,
+        "descripcion": "Parte final bajo techo"
+      },
+      "entrada": {
+        "capacidad": 0,
+        "descripcion": "Entrada"
+      }
+    }
+  },
+  "gestionUsuarios": {
+    "restriccionUsuarioUnico": true,
+    "permiteFotoPerfil": true
+  },
+  "tiposVehiculo": [
+    { "tipo": "Carro", "maximoEspaciosPorPuesto": 1 },
+    { "tipo": "Camioneta", "maximoEspaciosPorPuesto": 1 },
+    { "tipo": "Moto", "maximoEspaciosPorPuesto": 3 },
+    { "tipo": "Cicla", "maximoEspaciosPorPuesto": 1 }
+  ],
+  "reglasParqueo": [
+    {
+      "idRegla": "PR001",
+      "descripcion": "Las camionetas no se pueden ubicar en la entrada ni en el centro.",
+      "aplicaA": "Camioneta",
+      "zonasProhibidas": [
+        "tramoSuperiorIngreso",
+        "entradaIzquierdaSuperior",
+        "centroEstablecimiento"
+      ]
+    },
+    {
+      "idRegla": "PR002",
+      "descripcion": "Las motos solo se pueden ubicar en los puestos 1 y 2 de la entrada.",
+      "aplicaA": "Moto",
+      "puestosEspecificosPermitidos": [
+        { "zona": "tramoSuperiorIngreso", "puestos": [1, 2] },
+        { "zona": "entradaIzquierdaSuperior", "puestos": [1, 2] }
+      ]
+    },
+    {
+      "idRegla": "PR003",
+      "descripcion": "Los vehiculos ubicados en el centro tendran que dejar las llaves en el establecimiento.",
+      "aplicaAZona": "centroEstablecimiento",
+      "accionRequerida": "Dejar Llaves"
+    }
+  ],
+  "tarifas": [
+    {
+      "tipoVehiculo": "Carro",
+      "opcionesTarifas": [
+        { "tipoEspacio": "Regular", "tarifa": "Calculado_Por_Tiempo" },
+        {
+          "tipoEspacio": "Bajo Techo",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Adicional"
+        },
+        {
+          "tipoEspacio": "Servicio de Lavado",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Lavado"
+        }
+      ]
+    },
+    {
+      "tipoVehiculo": "Camioneta",
+      "opcionesTarifas": [
+        { "tipoEspacio": "Regular", "tarifa": "Calculado_Por_Tiempo" },
+        {
+          "tipoEspacio": "Bajo Techo",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Adicional"
+        },
+        {
+          "tipoEspacio": "Servicio de Lavado",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Lavado"
+        }
+      ]
+    },
+    {
+      "tipoVehiculo": "Moto",
+      "opcionesTarifas": [
+        { "tipoEspacio": "Regular", "tarifa": "Calculado_Por_Tiempo" },
+        {
+          "tipoEspacio": "Bajo Techo",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Adicional"
+        },
+        {
+          "tipoEspacio": "Servicio de Lavado",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Lavado"
+        }
+      ]
+    },
+    {
+      "tipoVehiculo": "Cicla",
+      "opcionesTarifas": [
+        { "tipoEspacio": "Regular", "tarifa": "Calculado_Por_Tiempo" },
+        {
+          "tipoEspacio": "Bajo Techo",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Adicional"
+        },
+        {
+          "tipoEspacio": "Servicio de Lavado",
+          "tarifa": "Calculado_Por_Tiempo_Mas_Lavado"
+        }
+      ]
+    }
+  ]
+}
