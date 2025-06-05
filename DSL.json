@@ -15,28 +15,38 @@
     "metodosPago": ["Efectivo", "Digital"],
     "porcentajeMultaCancelacion": 20,
     "zonasParqueo": {
-      "costadoDerecho": { "capacidad": 12, "descripcion": "Costado derecho" },
+      "costadoDerecho": {
+        "nombre": "F",
+        "capacidad": 12,
+        "descripcion": "Costado derecho"
+      },
       "costadoIzquierdoBajoTecho": {
+        "nombre": "C",
         "capacidad": 9,
         "descripcion": "Costado izquierdo bajo techo"
       },
       "centroEstablecimiento": {
+        "nombre": "D",
         "capacidad": 4,
         "descripcion": "Centro del establecimiento"
       },
       "tramoSuperiorIngreso": {
+        "nombre": "A",
         "capacidad": 5,
         "descripcion": "Tramo superior de ingreso"
       },
       "entradaIzquierdaSuperior": {
+        "nombre": "B",
         "capacidad": 6,
         "descripcion": "Lado izquierdo superior de ingreso"
       },
       "parteFinalBajoTecho": {
+        "nombre": "E",
         "capacidad": 4,
         "descripcion": "Parte final bajo techo"
       },
       "entrada": {
+        "nombre": "ENTRADA",
         "capacidad": 0,
         "descripcion": "Entrada"
       }
@@ -57,19 +67,15 @@
       "idRegla": "PR001",
       "descripcion": "Las camionetas no se pueden ubicar en la entrada ni en el centro.",
       "aplicaA": "Camioneta",
-      "zonasProhibidas": [
-        "tramoSuperiorIngreso",
-        "entradaIzquierdaSuperior",
-        "centroEstablecimiento"
-      ]
+      "zonasProhibidas": ["A", "B", "D"]
     },
     {
       "idRegla": "PR002",
       "descripcion": "Las motos solo se pueden ubicar en los puestos 1 y 2 de la entrada.",
       "aplicaA": "Moto",
       "puestosEspecificosPermitidos": [
-        { "zona": "tramoSuperiorIngreso", "puestos": [1, 2] },
-        { "zona": "entradaIzquierdaSuperior", "puestos": [1, 2] }
+        { "zona": "A", "puestos": [1, 2] },
+        { "zona": "B", "puestos": [1, 2] }
       ]
     },
     {
