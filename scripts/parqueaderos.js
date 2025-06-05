@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
           `Error HTTP: ${response.status} - No se pudo cargar el DSL.`
         );
       }
-      console.log(response);
       return response.json();
     })
     .then((PARKING_DSL_COMPLETO) => {
@@ -40,33 +39,38 @@ document.addEventListener("DOMContentLoaded", () => {
           const zonaData = zonasParqueo[zonaId]; // Obtiene los datos de la zona (capacidad, descripcion)
           const zonaElement = document.getElementById(zonaId); // Busca el div HTML con el ID de la zona
 
-          if (zonaElement && zonaData.capacidad > 0) {
+          if (zonaElement) {
             // Añadir nombre de la zona y capacidad
             const zonaTitle = document.createElement("div");
             zonaTitle.classList.add("zona-titulo");
-            zonaTitle.textContent = `${zonaData.descripcion} (${zonaData.capacidad})`;
+            zonaTitle.textContent = `Zona ${zonaData.nombre}`;
             zonaTitle.style.padding = "10px";
             zonaElement.appendChild(zonaTitle);
 
-            // Crear los espacios individuales dentro de cada zona
-            for (let i = 1; i <= zonaData.capacidad; i++) {
-              const espacioDiv = document.createElement("div");
-              espacioDiv.classList.add("espacio");
-              espacioDiv.textContent = i; // Numero de espacio
-              espacioDiv.setAttribute("data-zona", zonaId);
-              espacioDiv.setAttribute("data-espacio-id", `${zonaId}-${i}`);
+            if (zonaData.capacidad > 0) {
+              // Crear los espacios individuales dentro de cada zona
+              for (let i = 1; i <= zonaData.capacidad; i++) {
+                const espacioDiv = document.createElement("div");
+                espacioDiv.classList.add("espacio");
+                espacioDiv.textContent = `${zonaData.nombre}-${i}`; // Numero de espacio
+                espacioDiv.setAttribute("data-zona", zonaData.nombre);
+                espacioDiv.setAttribute(
+                  "data-espacio-id",
+                  `${zonaData.nombre}-${i}`
+                );
 
-              // Simular un estado aleatorio para el ejemplo
-              const estado = getRandomStatus();
-              espacioDiv.classList.add(estado);
+                // Simular un estado aleatorio para el ejemplo
+                const estado = getRandomStatus();
+                espacioDiv.classList.add(estado);
 
-              // Añadir un evento click para futuras interacciones (ej. reservar)
-              espacioDiv.addEventListener("click", () => {
-                espacioDiv.classList.toggle("selected");
-                // Aqui podrias abrir un modal de reserva, etc.
-              });
+                // Añadir un evento click para futuras interacciones (ej. reservar)
+                espacioDiv.addEventListener("click", () => {
+                  espacioDiv.classList.toggle("selected");
+                  // Aqui podrias abrir un modal de reserva, etc.
+                });
 
-              zonaElement.appendChild(espacioDiv);
+                zonaElement.appendChild(espacioDiv);
+              }
             }
           } else {
             console.warn(
