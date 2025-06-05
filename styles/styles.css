@@ -12,11 +12,13 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 2px;
-  background-color: #f4f4f4; /* Puedes ajustar si prefieres un fondo más suave */
 }
 
-
-
+#plano{
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 /* ------------------------------------------------------------------------- */
 /* NUEVOS ESTILOS PARA EL CONTENEDOR PRINCIPAL DEL PARQUEADERO */
 /* Mapeo de .parking-layout a #parqueadero-mapa y sus propiedades visuales */
