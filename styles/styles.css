@@ -11,23 +11,18 @@ body {
   display: flex; /* Mantenemos flex para centrar contenido */
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 2px;
   background-color: #f4f4f4; /* Puedes ajustar si prefieres un fondo más suave */
 }
 
-h1 {
-  color: #4a5568; /* Nuevo color de título */
-  margin-bottom: 25px; /* Espaciado del título */
-  font-size: 1.8em;
-  text-align: center;
-}
+
 
 /* ------------------------------------------------------------------------- */
 /* NUEVOS ESTILOS PARA EL CONTENEDOR PRINCIPAL DEL PARQUEADERO */
 /* Mapeo de .parking-layout a #parqueadero-mapa y sus propiedades visuales */
 #parqueadero-mapa {
   background: rgba(255, 255, 255, 0.95);
-  padding: 30px; /* Aumenta el padding interno */
+  padding: 40px; /* Aumenta el padding interno */
   border-radius: 15px; /* Bordes redondeados */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
   backdrop-filter: blur(
@@ -41,7 +36,7 @@ h1 {
     "costadoIzquierdoBajoTecho centroEstablecimiento . costadoDerecho"
     "parteFinalBajoTecho parteFinalBajoTecho . .";
 
-  gap: 8px; /* Espaciado entre secciones del grid */
+  gap: 10px; /* Espaciado entre secciones del grid */
   width: 90%;
   max-width: 1000px;
   height: auto; /* Ajusta la altura automáticamente según el contenido */
@@ -55,19 +50,19 @@ h1 {
 .zona {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px; /* Espacio entre los parking-spot */
+  gap: 15px; /* Espacio entre los parking-spot */
   padding: 10px;
   border-radius: 8px;
-  background: #f7fafc; /* Color de fondo por defecto para las secciones */
+  background: #F3FAFF; /* Color de fondo por defecto para las secciones */
   position: relative;
   /* Eliminamos el border dashed anterior */
-  border: none; /* Reemplazado por los bordes específicos de cada sección */
+  border: 3px solid #798da5;
 
   /* Mantenemos la alineacion de contenido */
   justify-content: center;
   align-content: flex-start; /* Alinea los espacios al inicio verticalmente */
 
-  color: #555;
+  color: #000000;
   font-size: 0.9em;
   font-weight: bold;
   text-align: center;
@@ -76,43 +71,28 @@ h1 {
 
 #entradaIzquierdaSuperior {
   grid-area: entradaIzquierdaSuperior;
-  border: 2px solid #fc8181;
-  background: #ebf8ff;
 }
 #tramoSuperiorIngreso {
   grid-area: tramoSuperiorIngreso;
-  border: 2px solid #fc8181;
-  background: #ebf8ff;
 }
 #costadoIzquierdoBajoTecho {
   grid-area: costadoIzquierdoBajoTecho;
-  border: 2px solid #fc8181;
-  background: #f0fff4;
 }
 #parteFinalBajoTecho {
   grid-area: parteFinalBajoTecho;
-  background: #fffaf0;
-  border: 2px solid #fc8181;
 }
 #centroEstablecimiento {
   grid-area: centroEstablecimiento;
-  background: #fff5f5;
-  border: 2px solid #fc8181;
 }
 #costadoDerecho {
   grid-area: costadoDerecho;
-  background: #f7fafc;
-  border: 2px solid #fc8181;
 }
 #parteFinal {
   grid-area: parteFinal;
-  background: #faf5ff;
-  border: 2px solid #fc8181;
 }
 #entrada {
   grid-area: entrada;
-  background: #dc3545;
-  border: 2px solid #fc8181;
+  background-color: #fcfbf6;
 }
 
 /* ------------------------------------------------------------------------- */
@@ -130,7 +110,6 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease; /* Transicion mas suave */
-  background: white; /* Fondo blanco por defecto */
   position: relative;
 
   /* Quitado margin, ahora usa gap de parking-section */
@@ -143,13 +122,15 @@ h1 {
   background: #c6f6d5; /* Verde claro */
   border-color: #48bb78;
   color: #22543d;
+  font-weight: bold;
 }
 
 .espacio.occupied {
   /* Renombrado de .ocupado a .occupied para coincidir */
-  background: #feb2b2; /* Rojo claro */
-  border-color: #e53e3e;
-  color: #742a2a;
+  background: #e7adad; /* Rojo claro */
+  border-color: #b87171;
+  color: #8d0000;
+  font-weight: bold;
 }
 
 .espacio.selected {
@@ -216,8 +197,8 @@ h1 {
 }
 
 .legend-color.occupied {
-  background-color: #feb2b2;
-  border-color: #e53e3e;
+  background-color: #e7adad;
+  border-color: #570808;
 }
 
 .legend-color.selected {
@@ -229,9 +210,13 @@ h1 {
   display: flex;
   justify-content: space-around;
   margin-top: 25px;
-  background: #f7fafc;
-  padding: 15px;
-  border-radius: 10px;
+  background: #ffffff;
+  padding: 40px; /* Aumenta el padding interno */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(
+    10px
+  ); /* Efecto de desenfoque (si el fondo lo permite) */
 }
 
 .status-item {
@@ -241,12 +226,12 @@ h1 {
 .status-number {
   font-size: 1.5em;
   font-weight: bold;
-  color: #4a5568;
+  color: #000000;
 }
 
 .status-label {
   font-size: 12px;
-  color: #718096;
+  color: #000000;
 }
 
 /* ------------------------------------------------------------------------- */
