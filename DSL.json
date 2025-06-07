@@ -18,32 +18,45 @@
       "costadoDerecho": {
         "nombre": "F",
         "capacidad": 12,
-        "descripcion": "Costado derecho"
+        "descripcion": "Costado derecho",
+        "tipoVehiculoPermitido": ["Carro", "Camioneta"],
+        "techo": false
       },
       "costadoIzquierdoBajoTecho": {
         "nombre": "C",
         "capacidad": 9,
-        "descripcion": "Costado izquierdo bajo techo"
+        "descripcion": "Costado izquierdo bajo techo",
+        "tipoVehiculoPermitido": ["Carro", "Camioneta"],
+        "techo": true
       },
       "centroEstablecimiento": {
         "nombre": "D",
         "capacidad": 4,
-        "descripcion": "Centro del establecimiento"
+        "descripcion": "Centro del establecimiento",
+        "tipoVehiculoPermitido": ["Carro"],
+        "techo": false
       },
       "tramoSuperiorIngreso": {
         "nombre": "A",
         "capacidad": 5,
-        "descripcion": "Tramo superior de ingreso"
+        "descripcion": "Tramo superior de ingreso",
+        "tipoVehiculoPermitido": ["Carro", "Camioneta", "Moto", "Cicla"],
+        "puestosMoto": [1, 2],
+        "techo": false
       },
       "entradaIzquierdaSuperior": {
         "nombre": "B",
         "capacidad": 6,
-        "descripcion": "Lado izquierdo superior de ingreso"
+        "descripcion": "Lado izquierdo superior de ingreso",
+        "tipoVehiculoPermitido": ["Carro", "Camioneta"],
+        "techo": false
       },
       "parteFinalBajoTecho": {
         "nombre": "E",
         "capacidad": 4,
-        "descripcion": "Parte final bajo techo"
+        "descripcion": "Parte final bajo techo",
+        "tipoVehiculoPermitido": ["Carro", "Camioneta"],
+        "techo": true
       },
       "entrada": {
         "nombre": "ENTRADA",
