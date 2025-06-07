@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Manrope%3Awght%40400%3B500%3B700%3B800&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
     <link rel="stylesheet" href="../styles/styles.css" />
 
@@ -53,27 +54,23 @@
                 </defs>
               </svg>
             </div>
-            <h2
+            <a
+              href="index.html"
               class="text-[#111218] text-lg font-bold leading-tight tracking-[-0.015em]"
             >
               ParkSmart
-            </h2>
+            </a>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
               <a
                 class="text-[#111218] text-sm font-medium leading-normal"
-                href="#"
+                href="index.html"
                 >Home</a
               >
               <a
                 class="text-[#111218] text-sm font-medium leading-normal"
-                href="#"
-                >Reservations</a
-              >
-              <a
-                class="text-[#111218] text-sm font-medium leading-normal"
-                href="#"
+                href="perfil.html"
                 >Profile</a
               >
             </div>
@@ -102,7 +99,7 @@
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5p-XFLFuMSDoqX3W98RABNMg5a8eZC0nb3MM892CyEpVoO3zS1vdRnv89eHFUJPV7N_iO98_MHX88d37LAlxtSIst-nDShSuf9U790oC9AGQA7WbtM_uNwx1AAH6hiwE6xK0YP-nQua5i6kSJ9_eaShuB9iiPLigACLq_dzIrGUIVoVqmwrMlYPULLtwJm5u-BaKSpIvRyW_mMLcIBXuyxST4TUZRYq8d6uEjnWOWMiEBvIXnoaILUZLtuaj0p6sOLSRKupaNb_8');
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJxr76iUNfR_p8flPMS-Oq_OBRfHKbwNKbqJRHFCg5Lt4CbVdpCkoKAJVkntOFEMVts9wsD-aTHzPriNfRBXcdUPekus3OWKGmECZomwYJHCsgYNhQJv_8KnLLkMgZTmYK0pp4H6Mmo5X6nGbEz0TdYw4GMIz2RPIX-pMjwU5fSCjrPupdZOjyN78O6L6-AdOmeWT724xiSlxZ1vZnhnabxZOGvRTorURKWnuEGlY9y1IPFdUyJ-picDnDmRz_s6DOON6SnXJBduQ');
               "
             ></div>
           </div>
@@ -118,139 +115,157 @@
                 New Reservation
               </p>
             </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
+            <form id="reservationForm" method="post">
+              <div
+                class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3"
+              >
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p
+                    class="text-[#111218] text-base font-medium leading-normal pb-2"
+                  >
+                    Select Vehicle
+                  </p>
+                  <select
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 bg-[image:--select-button-svg] placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
+                    name="vehiculo"
+                  >
+                    <option value="">Selecciona un vehículo</option>
+                    <option value="carro">Carro</option>
+                    <option value="camioneta">Camioneta</option>
+                    <option value="moto">Moto</option>
+                    <option value="bicicleta">Bicicleta</option>
+                  </select>
+                </label>
+              </div>
+              <div
+                class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3"
+              >
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p
+                    class="text-[#111218] text-base font-medium leading-normal pb-2"
+                  >
+                    Date
+                  </p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
+                    format="dd/mm/yyyy"
+                    type="date"
+                    name="fecha"
+                  />
+                </label>
+              </div>
+              <div
+                class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3"
+              >
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p
+                    class="text-[#111218] text-base font-medium leading-normal pb-2"
+                  >
+                    Time
+                  </p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
+                    type="time"
+                    name="hora"
+                  />
+                </label>
+              </div>
+              <div
+                class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3"
+              >
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p
+                    class="text-[#111218] text-base font-medium leading-normal pb-2"
+                  >
+                    Parking Space Type
+                  </p>
+                  <select
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 bg-[image:--select-button-svg] placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
+                    name="tipo"
+                  >
+                    <option value="">Selecciona un tipo de espacio</option>
+                    <option value="techo">Bajo techo</option>
+                    <option value="lavadero">Lavadero</option>
+                    <option value="ambas">Ambas</option>
+                  </select>
+                </label>
+              </div>
+              <div class="parking-layout">
                 <p
-                  class="text-[#111218] text-base font-medium leading-normal pb-2"
+                  class="text-[#111218] tracking-light text-[30px] font-bold leading-tight min-w-72"
+                  id="plano"
                 >
-                  Select Vehicle
+                  Plano del parqueadero
                 </p>
-                <select
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 bg-[image:--select-button-svg] placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
-                >
-                  <option value="one">Carro</option>
-                  <option value="two">Camioneta</option>
-                  <option value="three">Moto</option>
-                  <option value="four">Bicicleta</option>
-                </select>
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p
-                  class="text-[#111218] text-base font-medium leading-normal pb-2"
-                >
-                  Date
-                </p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p
-                  class="text-[#111218] text-base font-medium leading-normal pb-2"
-                >
-                  Time
-                </p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p
-                  class="text-[#111218] text-base font-medium leading-normal pb-2"
-                >
-                  Parking Space Type
-                </p>
-                <select
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111218] focus:outline-0 focus:ring-0 border border-[#dbdde6] bg-white focus:border-[#dbdde6] h-14 bg-[image:--select-button-svg] placeholder:text-[#5f678c] p-[15px] text-base font-normal leading-normal"
-                >
-                  <option value="one">Bajo techo</option>
-                  <option value="two">Lavadero</option>
-                  <option value="three">Ambas</option>
-                </select>
-              </label>
-            </div>
-            <div class="parking-layout">
+                <div id="parqueadero-mapa">
+                  <div class="zona" id="entrada"></div>
+                  <div class="zona" id="entradaIzquierdaSuperior"></div>
+                  <div class="zona" id="tramoSuperiorIngreso"></div>
+                  <div class="zona" id="costadoIzquierdoBajoTecho"></div>
+                  <div class="zona" id="centroEstablecimiento"></div>
+                  <div class="zona" id="costadoDerecho"></div>
+                  <div class="zona" id="parteFinalBajoTecho"></div>
+                </div>
+                <div class="legend">
+                  <div class="legend-item">
+                    <div
+                      class="legend-color available"
+                      style="background: #c6f6d5; border-color: #48bb78"
+                    ></div>
+                    <span>Disponible</span>
+                  </div>
+                  <div class="legend-item">
+                    <div
+                      class="legend-color occupied"
+                      style="background: #feb2b2; border-color: #e53e3e"
+                    ></div>
+                    <span>Ocupado</span>
+                  </div>
+                  <div class="legend-item">
+                    <div
+                      class="legend-color selected"
+                      style="background: #bee3f8; border-color: #3182ce"
+                    ></div>
+                    <span>Seleccionado</span>
+                  </div>
+                  <div class="legend-item">
+                    <span>🏍️ Solo Motos</span>
+                  </div>
+                  <div class="legend-item">
+                    <span>🏠 Bajo Techo</span>
+                  </div>
+                </div>
+
+                <div class="status-info">
+                  <div class="status-item">
+                    <div class="status-number" id="availableSpots">32</div>
+                    <div class="status-label">Disponibles</div>
+                  </div>
+                  <div class="status-item">
+                    <div class="status-number" id="occupiedSpots">8</div>
+                    <div class="status-label">Ocupados</div>
+                  </div>
+                  <div class="status-item">
+                    <div class="status-number" id="totalSpots">40</div>
+                    <div class="status-label">Total</div>
+                  </div>
+                </div>
+              </div>
               <p
-                class="text-[#111218] tracking-light text-[30px] font-bold leading-tight min-w-72"
-                id="plano"
+                class="text-[#5f678c] text-sm font-normal leading-normal pb-3 pt-1 px-4"
               >
-                Plano del parqueadero
+                Total Price: $15.00
               </p>
-              <div id="parqueadero-mapa">
-                <div class="zona" id="entrada"></div>
-                <div class="zona" id="entradaIzquierdaSuperior"></div>
-                <div class="zona" id="tramoSuperiorIngreso"></div>
-                <div class="zona" id="costadoIzquierdoBajoTecho"></div>
-                <div class="zona" id="centroEstablecimiento"></div>
-                <div class="zona" id="costadoDerecho"></div>
-                <div class="zona" id="parteFinalBajoTecho"></div>
+              <div class="flex px-4 py-3 justify-end">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#4768fa] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                  type="submit"
+                  id="confirmarBton"
+                >
+                  <span class="truncate">Confirm Reservation</span>
+                </button>
               </div>
-
-              <div class="legend">
-                <div class="legend-item">
-                  <div
-                    class="legend-color available"
-                    style="background: #c6f6d5; border-color: #48bb78"
-                  ></div>
-                  <span>Disponible</span>
-                </div>
-                <div class="legend-item">
-                  <div
-                    class="legend-color occupied"
-                    style="background: #feb2b2; border-color: #e53e3e"
-                  ></div>
-                  <span>Ocupado</span>
-                </div>
-                <div class="legend-item">
-                  <div
-                    class="legend-color selected"
-                    style="background: #bee3f8; border-color: #3182ce"
-                  ></div>
-                  <span>Seleccionado</span>
-                </div>
-                <div class="legend-item">
-                  <span>🏍️ Solo Motos</span>
-                </div>
-                <div class="legend-item">
-                  <span>🏠 Bajo Techo</span>
-                </div>
-              </div>
-
-              <div class="status-info">
-                <div class="status-item">
-                  <div class="status-number" id="availableSpots">32</div>
-                  <div class="status-label">Disponibles</div>
-                </div>
-                <div class="status-item">
-                  <div class="status-number" id="occupiedSpots">8</div>
-                  <div class="status-label">Ocupados</div>
-                </div>
-                <div class="status-item">
-                  <div class="status-number" id="totalSpots">40</div>
-                  <div class="status-label">Total</div>
-                </div>
-              </div>
-            </div>
-            <p
-              class="text-[#5f678c] text-sm font-normal leading-normal pb-3 pt-1 px-4"
-            >
-              Total Price: $15.00
-            </p>
-            <div class="flex px-4 py-3 justify-end">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#4768fa] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Confirm Reservation</span>
-              </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
