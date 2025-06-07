@@ -1,25 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Manrope%3Awght%40400%3B500%3B700%3B800&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
-
-    <title>Stitch Design</title>
+    <title>Confirmación de Reserva - ParkSmart</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden"
+      style="font-family: Manrope, 'Noto Sans', sans-serif"
+    >
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3 bg-white">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3 bg-white"
+        >
           <div class="flex items-center gap-4 text-[#0d0f1c]">
             <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g clip-path="url(#clip0_6_543)">
                   <path
                     d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"
@@ -33,23 +41,52 @@
                   ></path>
                 </g>
                 <defs>
-                  <clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"></rect></clipPath>
+                  <clipPath id="clip0_6_543">
+                    <rect width="48" height="48" fill="white"></rect>
+                  </clipPath>
                 </defs>
               </svg>
             </div>
-            <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">ParkSmart</h2>
+            <h2
+              class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              ParkSmart
+            </h2>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Search</a>
-              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Reservations</a>
-              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Account</a>
+              <a
+                class="text-[#0d0f1c] text-sm font-medium leading-normal"
+                href="#"
+                >Search</a
+              >
+              <a
+                class="text-[#0d0f1c] text-sm font-medium leading-normal"
+                href="#"
+                >Reservations</a
+              >
+              <a
+                class="text-[#0d0f1c] text-sm font-medium leading-normal"
+                href="#"
+                >Account</a
+              >
             </div>
             <button
               class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
             >
-              <div class="text-[#0d0f1c]" data-icon="Bell" data-size="20px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+              <div
+                class="text-[#0d0f1c]"
+                data-icon="Bell"
+                data-size="20px"
+                data-weight="regular"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
                   <path
                     d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
                   ></path>
@@ -58,58 +95,128 @@
             </button>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_z_ezqNcgC64KX5ihQbLAbu547XuaFG9O82iHEwFsr-EwdAXDn9U8gKoa3wRpuJvM1ZK64l5LhYRkSI5BrHe0sISPYQ7wGHK5Wz36KfFmJCi79Toek3Dfba_Aue4Am3JDRtEdskNmy0Agw4pfj-TTWwlEeo_0AbVikvcPMmVVtvdmfZNegNNDLtDCzn06vmcOb2EPmJTbB1_HTEdlqrXHiw738ag2agxlFIScN-fN_bDq2OffmIUJ-WxAXGZIWjKNvmzmGz3IxdM");'
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_z_ezqNcgC64KX5ihQbLAbu547XuaFG9O82iHEwFsr-EwdAXDn9U8gKoa3wRpuJvM1ZK64l5LhYRkSI5BrHe0sISPYQ7wGHK5Wz36KfFmJCi79Toek3Dfba_Aue4Am3JDRtEdskNmy0Agw4pfj-TTWwlEeo_0AbVikvcPMmVVtvdmfZNegNNDLtDCzn06vmcOb2EPmJTbB1_HTEdlqrXHiw738ag2agxlFIScN-fN_bDq2OffmIUJ-WxAXGZIWjKNvmzmGz3IxdM');
+              "
             ></div>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+          <div
+            class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1"
+          >
             <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72">Reservation Confirmed</p>
+              <p
+                id="main-title"
+                class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72"
+              >
+                Reserva Confirmada
+              </p>
             </div>
-            <p class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4">Your reservation is confirmed. Please find the details below.</p>
-            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Booking Details</h3>
-            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5">
-                <p class="text-[#47569e] text-sm font-normal leading-normal">Booking Reference</p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">#1234567890</p>
+            <p
+              id="main-subtitle"
+              class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4"
+            >
+              Tu reserva está confirmada. A continuación, encontrarás los
+              detalles.
+            </p>
+            <h3
+              class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+            >
+              Detalles de la Reserva
+            </h3>
+            <div class="p-4 grid grid-cols-[30%_1fr] gap-x-6">
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
+              >
+                <p class="text-[#47569e] text-sm font-normal leading-normal">
+                  Referencia
+                </p>
+                <p
+                  id="booking-reference"
+                  class="text-[#0d0f1c] text-sm font-bold leading-normal"
+                >
+                  Cargando...
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5">
-                <p class="text-[#47569e] text-sm font-normal leading-normal">Date</p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">July 20, 2024</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
+              >
+                <p class="text-[#47569e] text-sm font-normal leading-normal">
+                  Fecha
+                </p>
+                <p
+                  id="booking-date"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
+                  Cargando...
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5">
-                <p class="text-[#47569e] text-sm font-normal leading-normal">Time</p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">10:00 AM - 12:00 PM</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
+              >
+                <p class="text-[#47569e] text-sm font-normal leading-normal">
+                  Hora
+                </p>
+                <p
+                  id="booking-time"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
+                  Cargando...
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5">
-                <p class="text-[#47569e] text-sm font-normal leading-normal">Vehicle</p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">Toyota Camry</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
+              >
+                <p class="text-[#47569e] text-sm font-normal leading-normal">
+                  Vehículo
+                </p>
+                <p
+                  id="booking-vehicle"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
+                  Cargando...
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5">
-                <p class="text-[#47569e] text-sm font-normal leading-normal">Parking Space</p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">Space A12</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5">
-                <p class="text-[#47569e] text-sm font-normal leading-normal">Total Cost</p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">$20.00</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
+              >
+                <p class="text-[#47569e] text-sm font-normal leading-normal">
+                  Espacios Reservados
+                </p>
+                <p
+                  id="booking-spaces"
+                  class="text-[#0d0f1c] text-sm font-bold leading-normal"
+                >
+                  Cargando...
+                </p>
               </div>
             </div>
-            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Instructions</h3>
-            <p class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Please arrive at least 15 minutes before your reservation time. Follow the signs to your designated parking space. For any assistance, contact our support team at
+            <h3
+              class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+            >
+              Instrucciones
+            </h3>
+            <p
+              class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4"
+            >
+              Por favor, llega al menos 15 minutos antes de la hora de tu
+              reserva. Sigue las señales hacia tu espacio de parqueo designado.
+              Para cualquier asistencia, contacta a nuestro equipo de soporte al
               (555) 123-4567.
             </p>
             <div class="flex px-4 py-3">
-              <button
+              <a
+                href="index.html"
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 flex-1 bg-[#607afb] text-[#f8f9fc] text-sm font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">View Reservation</span>
-              </button>
+                <span class="truncate">Volver al Inicio</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="../scripts/get_reservation.js"></script>
 </html>
