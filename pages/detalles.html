@@ -58,51 +58,53 @@
             <div class="flex items-center gap-9">
               <a
                 class="text-[#0d0f1c] text-sm font-medium leading-normal"
-                href="#"
-                >Dashboard</a
+                href="index.html"
+                >Inicio</a
               >
               <a
                 class="text-[#0d0f1c] text-sm font-medium leading-normal"
-                href="#"
-                >Reservations</a
+                href="reservas.html"
+                >Nueva reserva</a
               >
               <a
                 class="text-[#0d0f1c] text-sm font-medium leading-normal"
-                href="#"
-                >Parking Spots</a
+                href="lista_reservas.html"
+                >Reservas</a
               >
               <a
                 class="text-[#0d0f1c] text-sm font-medium leading-normal"
-                href="#"
-                >Payments</a
+                href="perfil.html"
+                >Perfil</a
               >
             </div>
             <button
               class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
             >
-              <div
-                class="text-[#0d0f1c]"
-                data-icon="Bell"
-                data-size="20px"
-                data-weight="regular"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20px"
-                  height="20px"
-                  fill="currentColor"
-                  viewBox="0 0 256 256"
+              <a href="notificaciones.html">
+                <div
+                  class="text-[#0d0f1c]"
+                  data-icon="Bell"
+                  data-size="20px"
+                  data-weight="regular"
                 >
-                  <path
-                    d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
-                  ></path>
-                </svg>
-              </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
             </button>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMxqII4xoGXW5LRpn8t2zJ4vvy4pIn5nBkR4mLYd9D35GBBjY8m2RCaLorIjKaX8un8saBaKsvMc8KadeGhI9C89HrAuKzjpsz47v3i_3DRkEPWtvPAs78l75joGcOqxBZVBGW3Qi-7t7RM8ORGN0igcAr-FeOs2nC1f1caSHM9cBp7K1qSO_-w9LbMm1juQB3YUE1iG-0WoPxdQ39N9V-KOnxoQIqiWfETnzCK4WVLRFYGvNPoxYB3oAVNnvo7zN8dFdhJmNlFBE');
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJxr76iUNfR_p8flPMS-Oq_OBRfHKbwNKbqJRHFCg5Lt4CbVdpCkoKAJVkntOFEMVts9wsD-aTHzPriNfRBXcdUPekus3OWKGmECZomwYJHCsgYNhQJv_8KnLLkMgZTmYK0pp4H6Mmo5X6nGbEz0TdYw4GMIz2RPIX-pMjwU5fSCjrPupdZOjyN78O6L6-AdOmeWT724xiSlxZ1vZnhnabxZOGvRTorURKWnuEGlY9y1IPFdUyJ-picDnDmRz_s6DOON6SnXJBduQ');
               "
             ></div>
           </div>
@@ -116,46 +118,59 @@
                 <p
                   class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight"
                 >
-                  Payment Details
+                  Detalles de la Reserva
                 </p>
                 <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Review your charges and select a payment method.
+                  Reserva #
+                  <span id="booking-reference"></span>
+                </p>
+                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
+                  Revisa tus cargos y selecciona un método de pago.
                 </p>
               </div>
             </div>
             <h3
               class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
             >
-              Reservation Charges
+              Cargos de la Reserva
             </h3>
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
               <div
                 class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
               >
                 <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Reservation Fee
+                  Fecha
                 </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
-                  $15.00
-                </p>
-              </div>
-              <div
-                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
-              >
-                <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Duration
-                </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
-                  2 hours
+                <p
+                  id="booking-date"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
+                  2023-06-01
                 </p>
               </div>
               <div
                 class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
               >
                 <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Parking Spot
+                  Tarifa por Hora
                 </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
+                <p
+                  id="booking-time"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
+                  2 horas
+                </p>
+              </div>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
+              >
+                <p class="text-[#47569e] text-sm font-normal leading-normal">
+                  Espacio de Parqueo
+                </p>
+                <p
+                  id="booking-spaces"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
                   Spot #A12
                 </p>
               </div>
@@ -163,44 +178,20 @@
                 class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
               >
                 <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Total
+                  Vehículo
                 </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
-                  $15.00
-                </p>
-              </div>
-            </div>
-            <h3
-              class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
-            >
-              Fines (if applicable)
-            </h3>
-            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <div
-                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
-              >
-                <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Late Departure Fee
-                </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
-                  $5.00
-                </p>
-              </div>
-              <div
-                class="col-span-2 grid grid-cols-subgrid border-t border-t-[#ced2e9] py-5"
-              >
-                <p class="text-[#47569e] text-sm font-normal leading-normal">
-                  Total Fines
-                </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
-                  $5.00
+                <p
+                  id="booking-vehicle"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
+                  Cargando...
                 </p>
               </div>
             </div>
             <h3
               class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
             >
-              Total Amount Due
+              Total a Pagar
             </h3>
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
               <div
@@ -209,7 +200,10 @@
                 <p class="text-[#47569e] text-sm font-normal leading-normal">
                   Total
                 </p>
-                <p class="text-[#0d0f1c] text-sm font-normal leading-normal">
+                <p
+                  id="totalAmount"
+                  class="text-[#0d0f1c] text-sm font-normal leading-normal"
+                >
                   $20.00
                 </p>
               </div>
@@ -217,13 +211,13 @@
             <h3
               class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
             >
-              Payment Method
+              Método de Pago
             </h3>
             <div class="flex flex-wrap gap-3 p-4">
               <label
                 class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#ced2e9] px-4 h-11 text-[#0d0f1c] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#607afb] relative cursor-pointer"
               >
-                Cash
+                Efectivo
                 <input
                   type="radio"
                   class="invisible absolute"
@@ -233,17 +227,7 @@
               <label
                 class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#ced2e9] px-4 h-11 text-[#0d0f1c] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#607afb] relative cursor-pointer"
               >
-                Credit Card
-                <input
-                  type="radio"
-                  class="invisible absolute"
-                  name="e5673c48-db93-404b-ade5-0a05bf6ddabd"
-                />
-              </label>
-              <label
-                class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#ced2e9] px-4 h-11 text-[#0d0f1c] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#607afb] relative cursor-pointer"
-              >
-                Mobile Payment
+                Tarjeta de Crédito
                 <input
                   type="radio"
                   class="invisible absolute"
@@ -255,7 +239,9 @@
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#607afb] text-[#f8f9fc] text-sm font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">Confirm Payment</span>
+                <a href="confirmacion.html">
+                  <span class="truncate">Confirmar Reserva</span>
+                </a>
               </button>
             </div>
           </div>
@@ -263,4 +249,5 @@
       </div>
     </div>
   </body>
+  <script src="../scripts/get_reservation.js"></script>
 </html>

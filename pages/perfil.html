@@ -60,35 +60,42 @@
               <a
                 class="text-[#0d0f1c] text-sm font-medium leading-normal"
                 href="index.html"
-                >Home</a
+                >Inicio</a
               >
               <a
                 class="text-[#0d0f1c] text-sm font-medium leading-normal"
                 href="reservas.html"
-                >Reservations</a
+                ><span>Nueva reserva</span></a
+              >
+              <a
+                class="text-[#0d0f1c] text-sm font-medium leading-normal"
+                href="lista_reservas.html"
+                >Reservas</a
               >
             </div>
             <button
               class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
             >
-              <div
-                class="text-[#0d0f1c]"
-                data-icon="Bell"
-                data-size="20px"
-                data-weight="regular"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20px"
-                  height="20px"
-                  fill="currentColor"
-                  viewBox="0 0 256 256"
+              <a href="notificaciones.html">
+                <div
+                  class="text-[#0d0f1c]"
+                  data-icon="Bell"
+                  data-size="20px"
+                  data-weight="regular"
                 >
-                  <path
-                    d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
-                  ></path>
-                </svg>
-              </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
             </button>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
@@ -106,7 +113,7 @@
               <p
                 class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72"
               >
-                Account
+                Perfil
               </p>
             </div>
             <div class="flex p-4 @container">
@@ -122,14 +129,10 @@
                   ></div>
                   <div class="flex flex-col justify-center">
                     <p
+                      id="profile-name"
                       class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em]"
                     >
                       Sophia Carter
-                    </p>
-                    <p
-                      class="text-[#47569e] text-base font-normal leading-normal"
-                    >
-                      Member since 2021
                     </p>
                   </div>
                 </div>
@@ -138,16 +141,17 @@
             <h2
               class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
             >
-              Personal Information
+              Información Personal
             </h2>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
                 <p
                   class="text-[#0d0f1c] text-base font-medium leading-normal pb-2"
                 >
-                  Name
+                  Nombre
                 </p>
                 <input
+                  id="profile-name-input"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d0f1c] focus:outline-0 focus:ring-0 border border-[#ced2e9] bg-white focus:border-[#ced2e9] h-14 placeholder:text-[#47569e] p-[15px] text-base font-normal leading-normal"
                   value=""
                 />
@@ -158,9 +162,10 @@
                 <p
                   class="text-[#0d0f1c] text-base font-medium leading-normal pb-2"
                 >
-                  Email
+                  Correo electrónico
                 </p>
                 <input
+                  id="profile-email-input"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d0f1c] focus:outline-0 focus:ring-0 border border-[#ced2e9] bg-white focus:border-[#ced2e9] h-14 placeholder:text-[#47569e] p-[15px] text-base font-normal leading-normal"
                   value=""
                 />
@@ -171,9 +176,10 @@
                 <p
                   class="text-[#0d0f1c] text-base font-medium leading-normal pb-2"
                 >
-                  Phone
+                  Teléfono
                 </p>
                 <input
+                  id="profile-phone-input"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d0f1c] focus:outline-0 focus:ring-0 border border-[#ced2e9] bg-white focus:border-[#ced2e9] h-14 placeholder:text-[#47569e] p-[15px] text-base font-normal leading-normal"
                   value=""
                 />
@@ -182,7 +188,7 @@
             <h2
               class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
             >
-              Vehicle Information
+              Información del Vehículo
             </h2>
             <div
               class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2"
@@ -195,11 +201,13 @@
               ></div>
               <div class="flex flex-col justify-center">
                 <p
+                  id="profile-vehicle-name"
                   class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1"
                 >
                   Toyota Camry
                 </p>
                 <p
+                  id="profile-vehicle-license"
                   class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2"
                 >
                   License Plate: ABC-123
@@ -217,11 +225,13 @@
               ></div>
               <div class="flex flex-col justify-center">
                 <p
+                  id="profile-vehicle-name-2"
                   class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1"
                 >
                   Honda Civic
                 </p>
                 <p
+                  id="profile-vehicle-license-2"
                   class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2"
                 >
                   License Plate: XYZ-789
@@ -232,14 +242,14 @@
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e6e9f4] text-[#0d0f1c] text-sm font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">Add Vehicle</span>
+                <span class="truncate">Agregar Vehículo</span>
               </button>
             </div>
             <div class="flex px-4 py-3 justify-end">
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#607afb] text-[#f8f9fc] text-sm font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">Save Changes</span>
+                <span class="truncate">Guardar Cambios</span>
               </button>
             </div>
           </div>
