@@ -200,7 +200,7 @@ function valorServicio(servicio) {
 }
 
 function calculateTotal(selectedSpots, hora, vehiculo, servicios) {
-  const precioVehiculo = valorVehiculo(vehiculo);
+  const precioVehiculo = valorVehiculo(vehiculo) * hora * selectedSpots.length;
   const precioServicios = valorServicio(servicios);
   return precioVehiculo + precioServicios;
 }
